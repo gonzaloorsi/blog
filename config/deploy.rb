@@ -40,8 +40,8 @@ set :branch, "master"
 
 
 set :default_environment, {
-  'PATH' => "#{deploy_to}/bin:$PATH",
-  'GEM_HOME' => "#{deploy_to}/gems" 
+  'PATH' => "/home/deployer/apps/blog/bin:$PATH",
+  'GEM_HOME' => "/home/deployer/apps/blog/gems" 
 }
 
 default_run_options[:pty] = true
