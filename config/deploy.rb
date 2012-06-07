@@ -38,6 +38,11 @@ set :scm, "git"
 set :repository, "git@github.com:gonzaloorsi/#{application}.git"
 set :branch, "master"
 
+ set :default_environment, {
+      'PATH' => "/opt/ruby-enterprise/bin/:$PATH"
+    }
+
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
