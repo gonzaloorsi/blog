@@ -39,11 +39,6 @@ set :repository, "git@github.com:gonzaloorsi/#{application}.git"
 set :branch, "master"
 
 
-set :default_environment, {
-  'PATH' => "/home/deployer/apps/blog/bin:$PATH",
-  'GEM_HOME' => "/home/deployer/apps/blog/gems" 
-}
-
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
