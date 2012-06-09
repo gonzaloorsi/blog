@@ -21,6 +21,12 @@ set :use_sudo, false
 set :deploy_via, :copy
 
 
+set :default_environment, {
+  'PATH' => "#{deploy_to}/bin:$PATH",
+  'GEM_HOME' => "#{deploy_to}/gems" 
+}
+
+
 
 set :scm, "git"
 set :repository, "git@github.com:gonzaloorsi/#{application}.git"
