@@ -13,7 +13,7 @@ set :bundle_gemfile,  "Gemfile"
   set :bundle_flags,    "--deployment --quiet"
   set :bundle_without,  [:development, :test]
   set :bundle_cmd,      "bundle" # e.g. "/opt/ruby/bin/bundle"
-  set :bundle_roles,    {:except => {:no_release => true}} # e.g. [:app, :batch]
+#  set :bundle_roles,    {:except => {:no_release => true}} # e.g. [:app, :batch]
 
 require "bundler/capistrano"
 
