@@ -36,4 +36,5 @@ gem 'unicorn'
 gem 'capistrano'
 
 # To use debugger
+gem 'rvm'
 # gem 'debugger'

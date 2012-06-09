@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 
+
 load "config/recipes/base"
 load "config/recipes/nginx"
 load "config/recipes/unicorn"
@@ -7,6 +8,8 @@ load "config/recipes/postgresql"
 #load "config/recipes/nodejs"
 #load "config/recipes/rbenv"
 #load "config/recipes/check"
+
+
 
 server "106.187.97.179", :web, :app, :db, primary: true
 
@@ -16,6 +19,9 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 #set :deploy_via, :remote_cache
 set :use_sudo, false
 set :deploy_via, :copy
+set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+'
+set :rvm_type, :user 
 
 set :scm, "git"
 set :repository, "git@github.com:gonzaloorsi/#{application}.git"
