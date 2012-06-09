@@ -1,3 +1,4 @@
+path File.expand_path('..', __FILE__)
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
