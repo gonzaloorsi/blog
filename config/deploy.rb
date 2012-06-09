@@ -1,3 +1,13 @@
+server "106.187.97.179", :web, :app, :db, primary: true
+
+set :user, "deployer"
+set :application, "blog"
+set :deploy_to, "/home/#{user}/apps/#{application}"
+#set :deploy_via, :remote_cache
+set :use_sudo, false
+set :deploy_via, :copy
+
+
 set :bundle_gemfile,  "Gemfile"
   set :bundle_dir,      File.join(fetch(:shared_path), 'bundle')
   set :bundle_flags,    "--deployment --quiet"
@@ -18,14 +28,6 @@ load "config/recipes/postgresql"
 
 
 
-server "106.187.97.179", :web, :app, :db, primary: true
-
-set :user, "deployer"
-set :application, "blog"
-set :deploy_to, "/home/#{user}/apps/#{application}"
-#set :deploy_via, :remote_cache
-set :use_sudo, false
-set :deploy_via, :copy
 
 
 
