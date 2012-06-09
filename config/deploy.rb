@@ -1,3 +1,10 @@
+set :bundle_gemfile,  "Gemfile"
+  set :bundle_dir,      File.join(fetch(:shared_path), 'bundle')
+  set :bundle_flags,    "--deployment --quiet"
+  set :bundle_without,  [:development, :test]
+  set :bundle_cmd,      "bundle" # e.g. "/opt/ruby/bin/bundle"
+  set :bundle_roles,    {:except => {:no_release => true}} # e.g. [:app, :batch]
+
 require "bundler/capistrano"
 
 
@@ -20,12 +27,6 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 set :deploy_via, :copy
 
-set :bundle_gemfile,  "Gemfile"
-  set :bundle_dir,      File.join(fetch(:shared_path), 'bundle')
-  set :bundle_flags,    "--deployment --quiet"
-  set :bundle_without,  [:development, :test]
-  set :bundle_cmd,      "bundle" # e.g. "/opt/ruby/bin/bundle"
-  set :bundle_roles,    {:except => {:no_release => true}} # e.g. [:app, :batch]
 
 
 set :scm, "git"
