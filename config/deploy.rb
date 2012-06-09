@@ -19,9 +19,8 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 #set :deploy_via, :remote_cache
 set :use_sudo, false
 set :deploy_via, :copy
-set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
-'
-set :rvm_type, :user 
+
+
 
 set :scm, "git"
 set :repository, "git@github.com:gonzaloorsi/#{application}.git"
