@@ -15,7 +15,7 @@ set :application, "blog"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 #set :deploy_via, :remote_cache
 set :use_sudo, false
-set deploy_via :copy
+set :deploy_via, :copy
 
 set :scm, "git"
 set :repository, "git@github.com:gonzaloorsi/#{application}.git"
